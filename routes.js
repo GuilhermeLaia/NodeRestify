@@ -8,5 +8,6 @@ module.exports = function(app) {
 
 	app.post('/createStudent', student.createStudent); //Create Student API
     app.get('/getStudent', student.getStudent);  // Get All Student Details API
+    app.put('/updateStudent', student.updateStudent); // update Student API
 
 };

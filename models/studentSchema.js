@@ -14,4 +14,5 @@ module.exports = (function studentSchema () {
 	var Student = mongoose.model(collectionName, studentSchema);
 	
 	return Student;
+
 })();

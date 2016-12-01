@@ -2,7 +2,7 @@
  
 function studentController () {
 	var Student = require('../models/studentSchema');
-	
+
 	// Creating New Student
 	this.createStudent = function (req, res, next) {
 		var name = req.params.name;
@@ -26,13 +26,29 @@ function studentController () {
  
     Student.find({}, function(err, result) {
       if (err) {
-        console.log(err);
         return res.send({'error':err}); 
       }
       else {
         return res.send({'student Details':result});
       }
     });
+  };
+
+  // edit Deatils of Student
+  this.updateStudent = function (req, res, next) {
+
+  	var student = req.body.student;
+
+  	Student.update( { '_id' : student._id }, 
+   					{ $set:student },
+   	 function(err, result) {
+  		if(err){
+  			console.log(err);
+  			return res.send({'error': err})
+  		} else {
+  			return res.send({'student updated success!': result})
+  		}
+  	});
   };
  
 return this;

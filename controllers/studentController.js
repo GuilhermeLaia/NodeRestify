@@ -20,6 +20,9 @@ function studentController () {
       }
 		});
 	};
+
+
+
  
   // Fetching Details of Student
   this.getStudent = function (req, res, next) {
@@ -50,7 +53,8 @@ function studentController () {
   		}
   	});
   };
- 
+
+
 return this;
  
 };
